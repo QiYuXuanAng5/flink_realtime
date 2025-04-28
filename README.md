@@ -1,0 +1,2 @@
+# flink_realtime
+这是一个flink实施项目！包含了从ods到ads的处理，还有springboot和百度sugar的使用

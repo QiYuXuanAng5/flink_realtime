@@ -5,4 +5,7 @@
  * @description: 
 */
 public class flink {
+    public static void main(String[] args) {
+
+    }
 }

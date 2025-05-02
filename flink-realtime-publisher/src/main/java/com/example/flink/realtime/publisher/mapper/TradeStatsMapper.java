@@ -1,6 +1,7 @@
 package com.example.flink.realtime.publisher.mapper;
 
-import flink.TradeProvinceOrderAmount;
+import com.example.flink.realtime.publisher.bean.TradeProvinceOrderAmount;
+
 import org.apache.ibatis.annotations.Select;
 
 import java.math.BigDecimal;

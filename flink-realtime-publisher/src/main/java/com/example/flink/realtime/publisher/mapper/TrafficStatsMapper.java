@@ -1,4 +1,4 @@
-package flink;
+package com.example.flink.realtime.publisher.mapper;
 
 import com.example.flink.realtime.publisher.bean.TrafficUvCt;
 import org.apache.ibatis.annotations.Param;

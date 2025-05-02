@@ -1,4 +1,4 @@
-package flink;
+package com.example.flink.realtime.publisher.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

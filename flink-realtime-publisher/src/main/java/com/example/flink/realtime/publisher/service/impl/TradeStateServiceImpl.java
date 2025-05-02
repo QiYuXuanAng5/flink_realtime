@@ -1,9 +1,8 @@
 package com.example.flink.realtime.publisher.service.impl;
 
+import com.example.flink.realtime.publisher.bean.TradeProvinceOrderAmount;
 import com.example.flink.realtime.publisher.mapper.TradeStatsMapper;
 import com.example.flink.realtime.publisher.service.TradeStateService;
-
-import flink.TradeProvinceOrderAmount;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

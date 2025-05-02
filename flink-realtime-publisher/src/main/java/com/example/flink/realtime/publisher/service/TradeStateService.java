@@ -1,6 +1,6 @@
 package com.example.flink.realtime.publisher.service;
 
-import flink.TradeProvinceOrderAmount;
+import com.example.flink.realtime.publisher.bean.TradeProvinceOrderAmount;
 
 import java.math.BigDecimal;
 import java.util.List;

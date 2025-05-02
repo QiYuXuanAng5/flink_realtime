@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../../../Environment/maven-3.8.3/apache-maven-3.8.3/repository/org/springframework/boot/spring-boot-starter-parent/3.4.4/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dim/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dim/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-dwd-interaction-comment-info/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-dwd-interaction-comment-info/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-dwd-log/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-dwd-log/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-dwd-trade-cart-add/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-dwd-trade-cart-add/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-dwd-trade-order-cancel-detail/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-dwd-trade-order-cancel-detail/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-dwd-trade-order-detail/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-dwd-trade-order-detail/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-trade-order-pay-suc-detail/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-trade-order-pay-suc-detail/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dwd/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dwd/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-dws-trade-cart-add-uu-window/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-dws-trade-cart-add-uu-window/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-dws-traffic-home-detail-view-window/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-dws-traffic-home-detail-view-window/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-dws-traffic-view-window/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-dws-traffic-view-window/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-dws-view-window/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-dws-view-window/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-user-login-window/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-user-login-window/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dws/realtime-dws-trade-sku-order-window/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dws/realtime-dws-trade-sku-order-window/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dws/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dws/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-publisher/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

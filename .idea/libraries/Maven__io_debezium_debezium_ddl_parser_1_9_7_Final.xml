@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.debezium:debezium-ddl-parser:1.9.7.Final">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../Environment/maven-3.8.3/apache-maven-3.8.3/repository/io/debezium/debezium-ddl-parser/1.9.7.Final/debezium-ddl-parser-1.9.7.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../Environment/maven-3.8.3/apache-maven-3.8.3/repository/io/debezium/debezium-ddl-parser/1.9.7.Final/debezium-ddl-parser-1.9.7.Final-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../Environment/maven-3.8.3/apache-maven-3.8.3/repository/io/debezium/debezium-ddl-parser/1.9.7.Final/debezium-ddl-parser-1.9.7.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

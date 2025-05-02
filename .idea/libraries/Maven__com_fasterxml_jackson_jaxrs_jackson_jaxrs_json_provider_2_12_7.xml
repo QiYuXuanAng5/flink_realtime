@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.12.7">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../Environment/maven-3.8.3/apache-maven-3.8.3/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.12.7/jackson-jaxrs-json-provider-2.12.7.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../Environment/maven-3.8.3/apache-maven-3.8.3/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.12.7/jackson-jaxrs-json-provider-2.12.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../Environment/maven-3.8.3/apache-maven-3.8.3/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.12.7/jackson-jaxrs-json-provider-2.12.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

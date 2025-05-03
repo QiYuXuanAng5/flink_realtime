@@ -16,7 +16,7 @@ import java.util.List;
  */
 public interface TradeStatsMapper {
     //获取某天总交易额
-    @Select("SELECT SUM(order_amount) order_amount FROM dws_trade_province_order_window PARTITION p${date}")
+    @Select("SELECT SUM(order_amount) order_amount FROM dws_trade_province_order_window PARTITION p#{date}")
     BigDecimal selectGMV(Integer date);
 
     //获取某天各个身份交易额

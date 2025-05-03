@@ -38,7 +38,7 @@
       <module name="flink-realtime-dws-traffic-home-detail-view-window" target="1.8" />
       <module name="flink-realtime-dws-traffic-view-window" target="1.8" />
       <module name="flink-realtime-dws-view-window" target="1.8" />
-      <module name="flink-realtime-publisher" target="17" />
+      <module name="flink-realtime-publisher" target="1.8" />
       <module name="flink-realtime-trade-order-pay-suc-detail" target="1.8" />
       <module name="flink-realtime-user-login-window" target="1.8" />
       <module name="flink_realtime" target="1.8" />

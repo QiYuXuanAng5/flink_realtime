@@ -2,7 +2,9 @@ package com.example.flink.realtime.publisher.controller;
 
 import com.example.flink.realtime.publisher.bean.TrafficUvCt;
 
+import com.example.flink.realtime.publisher.service.TrafficStatsService;
 import com.example.flink.realtime.publisher.util.DateFormatUtil;
+
 import org.apache.commons.lang3.StringUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,7 @@ import java.util.List;
 public class TrafficStatsController {
 
     @Autowired
-    private flink.TrafficStatsService trafficStatsService;
+    private TrafficStatsService trafficStatsService;
 
     @RequestMapping("/ch")
     public String getChUvCt(

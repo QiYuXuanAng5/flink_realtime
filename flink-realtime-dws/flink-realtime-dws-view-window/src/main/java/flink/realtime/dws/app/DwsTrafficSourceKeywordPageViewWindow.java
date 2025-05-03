@@ -4,7 +4,7 @@ import com.struggle.flink.realtime.common.base.BaseSQLApp;
 import com.struggle.flink.realtime.common.constant.Constant;
 import com.struggle.flink.realtime.common.util.SQLUtil;
 
-import flink.KeywordUDTF;
+import flink.realtime.dws.function.KeywordUDTF;
 import org.apache.flink.table.api.Table;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 

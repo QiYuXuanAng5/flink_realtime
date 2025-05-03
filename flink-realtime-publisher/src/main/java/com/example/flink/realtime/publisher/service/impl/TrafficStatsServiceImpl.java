@@ -1,9 +1,9 @@
 package com.example.flink.realtime.publisher.service.impl;
 
 import com.example.flink.realtime.publisher.bean.TrafficUvCt;
-
 import com.example.flink.realtime.publisher.mapper.TrafficStatsMapper;
-import flink.TrafficStatsService;
+import com.example.flink.realtime.publisher.service.TrafficStatsService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

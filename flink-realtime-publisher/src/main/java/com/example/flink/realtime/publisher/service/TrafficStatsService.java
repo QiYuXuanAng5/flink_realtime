@@ -1,4 +1,4 @@
-package flink;
+package com.example.flink.realtime.publisher.service;
 
 import com.example.flink.realtime.publisher.bean.TrafficUvCt;
 

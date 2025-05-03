@@ -1,6 +1,6 @@
 package flink.realtime.dws.function;
 
-import flink.KeywordUtil;
+import flink.realtime.dws.util.KeywordUtil;
 import org.apache.flink.table.annotation.DataTypeHint;
 import org.apache.flink.table.annotation.FunctionHint;
 import org.apache.flink.table.functions.TableFunction;

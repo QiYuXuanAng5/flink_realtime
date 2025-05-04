@@ -85,32 +85,32 @@ public class DwdTradeOrderCancelDetail extends BaseSQLApp {
                         "on od.order_id=oc.id ");
         result.execute().print();
 
-        //TODO 将关联的结果写到kafka主题中
-        tableEnv.executeSql(
-                "create table " + Constant.TOPIC_DWD_TRADE_ORDER_CANCEL + "(" +
-                        "id string," +
-                        "order_id string," +
-                        "user_id string," +
-                        "sku_id string," +
-                        "sku_name string," +
-                        "province_id string," +
-                        "activity_id string," +
-                        "activity_rule_id string," +
-                        "coupon_id string," +
-                        "operate_time string," +
-                        "sku_num string," +
-                        "split_activity_amount string," +
-                        "split_coupon_amount string," +
-                        "split_total_amount string," +
-                        "ts_ms bigint ," +
-                        "PRIMARY KEY (id) NOT ENFORCED " +
-                        ") WITH (\n" +
-                        "  'connector' = 'upsert-kafka',\n" +
-                        "  'topic' = '" + Constant.TOPIC_DWD_TRADE_ORDER_CANCEL + "',\n" +
-                        "  'properties.bootstrap.servers' = '" + Constant.KAFKA_BROKERS + "',\n" +
-                        "  'key.format' = 'json',\n" +
-                        "  'value.format' = 'json'\n" +
-                        ")");
-        result.executeInsert(Constant.TOPIC_DWD_TRADE_ORDER_CANCEL);
+//        //TODO 将关联的结果写到kafka主题中
+//        tableEnv.executeSql(
+//                "create table " + Constant.TOPIC_DWD_TRADE_ORDER_CANCEL + "(" +
+//                        "id string," +
+//                        "order_id string," +
+//                        "user_id string," +
+//                        "sku_id string," +
+//                        "sku_name string," +
+//                        "province_id string," +
+//                        "activity_id string," +
+//                        "activity_rule_id string," +
+//                        "coupon_id string," +
+//                        "operate_time string," +
+//                        "sku_num string," +
+//                        "split_activity_amount string," +
+//                        "split_coupon_amount string," +
+//                        "split_total_amount string," +
+//                        "ts_ms bigint ," +
+//                        "PRIMARY KEY (id) NOT ENFORCED " +
+//                        ") WITH (\n" +
+//                        "  'connector' = 'upsert-kafka',\n" +
+//                        "  'topic' = '" + Constant.TOPIC_DWD_TRADE_ORDER_CANCEL + "',\n" +
+//                        "  'properties.bootstrap.servers' = '" + Constant.KAFKA_BROKERS + "',\n" +
+//                        "  'key.format' = 'json',\n" +
+//                        "  'value.format' = 'json'\n" +
+//                        ")");
+//        result.executeInsert(Constant.TOPIC_DWD_TRADE_ORDER_CANCEL);
     }
 }

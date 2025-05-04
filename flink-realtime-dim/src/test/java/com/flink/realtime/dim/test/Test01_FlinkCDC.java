@@ -33,7 +33,7 @@ public class Test01_FlinkCDC {
                 .username("root")
                 .password("root")
                 .deserializer(new JsonDebeziumDeserializationSchema()) // converts SourceRecord to JSON String
-                .startupOptions(StartupOptions.latest())
+                .startupOptions(StartupOptions.earliest())
                 .includeSchemaChanges(true)
                 .build();
 

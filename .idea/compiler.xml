@@ -9,10 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="flink-realtime-dws-view-window" />
         <module name="flink-realtime-dws-traffic-view-window" />
-        <module name="flink-realtime-user-login-window" />
         <module name="flink-realtime-common" />
-        <module name="flink-realtime-dws-traffic-home-detail-view-window" />
-        <module name="flink-realtime-dws-trade-cart-add-uu-window" />
         <module name="flink-realtime-dwd-trade-order-detail" />
         <module name="flink-realtime-dwd-interaction-comment-info" />
         <module name="flink-realtime-dwd-trade-cart-add" />
@@ -25,24 +22,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="flink-realtime-common" target="1.8" />
-      <module name="flink-realtime-dim" target="1.8" />
-      <module name="flink-realtime-dwd" target="1.8" />
-      <module name="flink-realtime-dwd-interaction-comment-info" target="1.8" />
-      <module name="flink-realtime-dwd-log" target="1.8" />
-      <module name="flink-realtime-dwd-trade-cart-add" target="1.8" />
-      <module name="flink-realtime-dwd-trade-order-cancel-detail" target="1.8" />
-      <module name="flink-realtime-dwd-trade-order-detail" target="1.8" />
-      <module name="flink-realtime-dws" target="1.8" />
+      <module name="aaaa" target="1.8" />
       <module name="flink-realtime-dws-trade-cart-add-uu-window" target="1.8" />
       <module name="flink-realtime-dws-traffic-home-detail-view-window" target="1.8" />
-      <module name="flink-realtime-dws-traffic-view-window" target="1.8" />
-      <module name="flink-realtime-dws-view-window" target="1.8" />
-      <module name="flink-realtime-publisher" target="1.8" />
-      <module name="flink-realtime-trade-order-pay-suc-detail" target="1.8" />
       <module name="flink-realtime-user-login-window" target="1.8" />
-      <module name="flink_realtime" target="1.8" />
-      <module name="realtime-dws-trade-sku-order-window" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

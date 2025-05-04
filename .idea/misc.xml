@@ -7,6 +7,9 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/flink-realtime-publisher/pom.xml" />
         <option value="$PROJECT_DIR$/flink-realtime-dws/realtime-dws-trade-sku-order-window/pom.xml" />
+        <option value="$PROJECT_DIR$/flink-realtime-dws/flink-realtime-dws-trade-cart-add-uu-window/pom.xml" />
+        <option value="$PROJECT_DIR$/flink-realtime-dws/flink-realtime-dws-traffic-home-detail-view-window/pom.xml" />
+        <option value="$PROJECT_DIR$/flink-realtime-dws/flink-realtime-user-login-window/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

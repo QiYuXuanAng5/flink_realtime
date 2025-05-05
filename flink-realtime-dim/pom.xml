@@ -15,8 +15,26 @@
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>flink-realtime-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>provided</scope>
+            <version>${project.version}</version>
+            <!-- 根据需要调整scope -->
+        </dependency>
+
+        <dependency>
+            <groupId>com.ververica</groupId>
+            <artifactId>flink-connector-mysql-cdc</artifactId>
+            <!-- 使用父POM中定义的版本 -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-kafka</artifactId>
+            <!-- 使用父POM中定义的版本 -->
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <!-- 使用父POM中定义的版本 -->
         </dependency>
     </dependencies>
 

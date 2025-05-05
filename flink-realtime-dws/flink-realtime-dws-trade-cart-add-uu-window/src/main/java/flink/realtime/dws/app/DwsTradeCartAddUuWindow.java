@@ -138,7 +138,8 @@ public class DwsTradeCartAddUuWindow extends BaseApp {
                     }
                 }
         );
-        //TODO 7.将聚合的结果写到Doris
         aggregateDS.print();
+        //TODO 7.将聚合的结果写到Doris
+        //aggregateDS.print();
     }
 }

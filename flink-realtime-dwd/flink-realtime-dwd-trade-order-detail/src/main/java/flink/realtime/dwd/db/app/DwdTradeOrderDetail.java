@@ -96,36 +96,35 @@ public class DwdTradeOrderDetail extends BaseSQLApp {
                         "left join order_detail_coupon cou " +
                         "on od.id=cou.order_detail_id ");
 
-        result.execute().print();
+//        result.execute().print();
+
+        //将关联的结果写入到kafka
+        tableEnv.executeSql(
+                "create table " + Constant.TOPIC_DWD_TRADE_ORDER_DETAIL + "(" +
+                        "id string," +
+                        "order_id string," +
+                        "user_id string," +
+                        "sku_id string," +
+                        "sku_name string," +
+                        "province_id string," +
+                        "activity_id string," +
+                        "activity_rule_id string," +
+                        "coupon_id string," +
+                        "create_time string," +
+                        "sku_num string," +
+                        "split_activity_amount string," +
+                        "split_coupon_amount string," +
+                        "split_total_amount string," +
+                        "ts_ms bigint," +
+                        "primary key(id) not enforced " +
+                        ") WITH (\n" +
+                        "  'connector' = 'upsert-kafka',\n" +
+                        "  'topic' = '" + Constant.TOPIC_DWD_TRADE_ORDER_DETAIL + "',\n" +
+                        "  'properties.bootstrap.servers' = '" + Constant.KAFKA_BROKERS + "',\n" +
+                        "  'key.format' = 'json',\n" +
+                        "  'value.format' = 'json'\n" +
+                        ")");
+        //写入
+        result.executeInsert(Constant.TOPIC_DWD_TRADE_ORDER_DETAIL);
     }
 }
-//        //将关联的结果写入到kafka
-////        tableEnv.executeSql(
-////                "create table " + Constant.TOPIC_DWD_TRADE_ORDER_DETAIL + "(" +
-////                        "id string," +
-////                        "order_id string," +
-////                        "user_id string," +
-////                        "sku_id string," +
-////                        "sku_name string," +
-////                        "province_id string," +
-////                        "activity_id string," +
-////                        "activity_rule_id string," +
-////                        "coupon_id string," +
-////                        "create_time string," +
-////                        "sku_num string," +
-////                        "split_activity_amount string," +
-////                        "split_coupon_amount string," +
-////                        "split_total_amount string," +
-////                        "ts_ms bigint," +
-////                        "primary key(id) not enforced " +
-////                        ") WITH (\n" +
-////                        "  'connector' = 'upsert-kafka',\n" +
-////                        "  'topic' = '" + Constant.TOPIC_DWD_TRADE_ORDER_DETAIL + "',\n" +
-////                        "  'properties.bootstrap.servers' = '" + Constant.KAFKA_BROKERS + "',\n" +
-////                        "  'key.format' = 'json',\n" +
-////                        "  'value.format' = 'json'\n" +
-////                        ")");
-////        //写入
-////        result.executeInsert(Constant.TOPIC_DWD_TRADE_ORDER_DETAIL);
-//    }
-//}

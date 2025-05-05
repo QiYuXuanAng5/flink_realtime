@@ -156,10 +156,10 @@ public class DwsTrafficVcChArisNewPageViewWindow extends BaseApp {
                     }
                 }
         );
-        //reduceDS.print();
+        reduceDS.print();
         //TODO 7.将聚合的结果写到Doris表
-        reduceDS
-                .map(new BeanToJsonStrMapFunction<TrafficPageViewBean>())
-                .sinkTo(FlinkSinkUtil.getDorisSink("dws_traffic_vc_ch_ar_is_new_page_view_window"));
+//        reduceDS
+//                .map(new BeanToJsonStrMapFunction<TrafficPageViewBean>())
+//                .sinkTo(FlinkSinkUtil.getDorisSink("dws_traffic_vc_ch_ar_is_new_page_view_window"));
     }
 }

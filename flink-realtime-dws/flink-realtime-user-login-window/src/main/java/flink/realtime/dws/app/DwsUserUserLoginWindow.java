@@ -141,9 +141,9 @@ public class DwsUserUserLoginWindow extends BaseApp {
                 }
         );
         //TODO 8.将聚合结果写到Doris
-        //reduceDS.print();
-        reduceDS
-                .map(new BeanToJsonStrMapFunction<>())
-                .sinkTo(FlinkSinkUtil.getDorisSink("dws_user_user_login_window"));
+        reduceDS.print();
+//        reduceDS
+//                .map(new BeanToJsonStrMapFunction<>())
+//                .sinkTo(FlinkSinkUtil.getDorisSink("dws_user_user_login_window"));
     }
 }

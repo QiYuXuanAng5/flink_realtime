@@ -72,11 +72,11 @@ public class DimApp {
                 .setBootstrapServers(Constant.KAFKA_BROKERS)
                 .setTopics(Constant.TOPIC_DB)
                 .setGroupId(groupID)
-                .setStartingOffsets(OffsetsInitializer.latest())
+                .setStartingOffsets(OffsetsInitializer.earliest())
                 .setValueOnlyDeserializer(new SimpleStringSchema())
                 .build();
         DataStreamSource<String> kafkaStrDS = env.fromSource(kafkaSource, WatermarkStrategy.noWatermarks(), "kafka source");
-        //kafkaStrDS.print();
+//        kafkaStrDS.print();
         SingleOutputStreamOperator<JSONObject> jsonObjDS = kafkaStrDS.process(new ProcessFunction<String, JSONObject>() {
             @Override
             public void processElement(String jsonStr, ProcessFunction<String, JSONObject>.Context context, Collector<JSONObject> collector) {
@@ -109,7 +109,7 @@ public class DimApp {
         DataStreamSource<String> mysqlStrDS = env
                 .fromSource(mySqlSource, WatermarkStrategy.noWatermarks(), "mysql_source")
                 .setParallelism(1);
-        //mysqlStrDS.print();
+        mysqlStrDS.print();
         //Todo 4.对配置流中的数据类型进行转换 jsonStr -> 实体类对象
         SingleOutputStreamOperator<TableProcessDim> tpDS = mysqlStrDS.map(
                 new MapFunction<String, TableProcessDim>() {

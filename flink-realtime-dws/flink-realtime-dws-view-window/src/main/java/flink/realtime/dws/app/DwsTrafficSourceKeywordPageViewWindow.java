@@ -54,27 +54,27 @@ public class DwsTrafficSourceKeywordPageViewWindow extends BaseSQLApp {
                 "  FROM TABLE(\n" +
                 "    TUMBLE(TABLE split_table, DESCRIPTOR(et), INTERVAL '10' second))\n" +
                 "  GROUP BY window_start, window_end,keyword");
-        //resTable.execute().print();
+        resTable.execute().print();
 
-        //将聚合的结果写到Doris中
-        tableEnv.executeSql("create table dws_traffic_source_keyword_page_view_window(" +
-                "  stt string, " +  // 2023-07-11 14:14:14
-                "  edt string, " +
-                "  cur_date string, " +
-                "  keyword string, " +
-                "  keyword_count bigint " +
-                ")with(" +
-                " 'connector' = 'doris'," +
-                " 'fenodes' = '" + Constant.DORIS_FE_NODES + "'," +
-                "  'table.identifier' = '" + Constant.DORIS_DATABASE + ".dws_traffic_source_keyword_page_view_window'," +
-                "  'username' = 'root'," +
-                "  'password' = '', " +
-                "  'sink.properties.format' = 'json', " +
-                "  'sink.buffer-count' = '4', " +
-                "  'sink.buffer-size' = '4086'," +
-                "  'sink.enable-2pc' = 'false', " + // 测试阶段可以关闭两阶段提交,方便测试
-                "  'sink.properties.read_json_by_line' = 'true' " +
-                ")");
-        resTable.executeInsert("dws_traffic_source_keyword_page_view_window");
+//        //将聚合的结果写到Doris中
+//        tableEnv.executeSql("create table dws_traffic_source_keyword_page_view_window(" +
+//                "  stt string, " +  // 2023-07-11 14:14:14
+//                "  edt string, " +
+//                "  cur_date string, " +
+//                "  keyword string, " +
+//                "  keyword_count bigint " +
+//                ")with(" +
+//                " 'connector' = 'doris'," +
+//                " 'fenodes' = '" + Constant.DORIS_FE_NODES + "'," +
+//                "  'table.identifier' = '" + Constant.DORIS_DATABASE + ".dws_traffic_source_keyword_page_view_window'," +
+//                "  'username' = 'root'," +
+//                "  'password' = '', " +
+//                "  'sink.properties.format' = 'json', " +
+//                "  'sink.buffer-count' = '4', " +
+//                "  'sink.buffer-size' = '4086'," +
+//                "  'sink.enable-2pc' = 'false', " + // 测试阶段可以关闭两阶段提交,方便测试
+//                "  'sink.properties.read_json_by_line' = 'true' " +
+//                ")");
+//        resTable.executeInsert("dws_traffic_source_keyword_page_view_window");
     }
 }

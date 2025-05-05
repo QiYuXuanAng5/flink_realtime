@@ -14,24 +14,7 @@ import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
  */
 public class DwdInteractionCommentInfo extends BaseSQLApp {
     public static void main(String[] args) {
-        /*
-        //开启检查点
-        env.enableCheckpointing(5000L, CheckpointingMode.EXACTLY_ONCE);
-        //设置检查点超时时间
-        env.getCheckpointConfig().setCheckpointTimeout(6000L);
-        //设置状态取消后，检查点是否保留
-        env.getCheckpointConfig().setExternalizedCheckpointCleanup(CheckpointConfig.ExternalizedCheckpointCleanup.RETAIN_ON_CANCELLATION);
-        //设置两个检查点之间最小时间间隔
-        env.getCheckpointConfig().setMinPauseBetweenCheckpoints(2000L);
-        //设置重启策略
-        env.setRestartStrategy(RestartStrategies.failureRateRestart(3, Time.days(30),Time.seconds(3)));
-        env.setStateBackend(new HashMapStateBackend());
-        env.getCheckpointConfig().setCheckpointStorage("hdfs://cdh01:8020/ck/");
-        //设置操作hadoop的用户
-        System.setProperty("HADOOP_USER_NAME","atguigu");
-         */
-
-        new DwdInteractionCommentInfo().start(10012, 4);
+        new DwdInteractionCommentInfo().start(10015, 4);
     }
 
     @Override
@@ -54,6 +37,7 @@ public class DwdInteractionCommentInfo extends BaseSQLApp {
                 "from topic_db where source['table']='comment_info' and op='c'");
         //将表对象注册到表执行环境中
         tableEnv.createTemporaryView("comment_info", commentInfo);
+        //tableEnv.executeSql("select * from comment_info").print();
         //从hbase中读取字典数据 创建动态表
         readBaseDic(tableEnv);
         //tableEnv.executeSql("select * from base_dic").print();
@@ -69,18 +53,20 @@ public class DwdInteractionCommentInfo extends BaseSQLApp {
                 "from comment_info as c\n" +
                 "join base_dic for system_time as of c.pro_time as dic\n" +
                 "on c.appraise = dic.dic_code");
+
+        joinedTable.execute().print();
         //将关联的结果写到kafka
-        tableEnv.executeSql("CREATE TABLE " + Constant.TOPIC_DWD_INTERACTION_COMMENT_INFO + " (\n" +
-                "  id string,\n" +
-                "  user_id string,\n" +
-                "  sku_id string,\n" +
-                "  appraise string,\n" +
-                "  appraise_name string,\n" +
-                "  comment_txt string,\n" +
-                "  ts_ms bigint,\n" +
-                "  PRIMARY KEY (id) NOT ENFORCED" +
-                ") " + SQLUtil.getUpsertKafkaDDL(Constant.TOPIC_DWD_INTERACTION_COMMENT_INFO));
-        //写入
-        joinedTable.executeInsert(Constant.TOPIC_DWD_INTERACTION_COMMENT_INFO);
+//        tableEnv.executeSql("CREATE TABLE " + Constant.TOPIC_DWD_INTERACTION_COMMENT_INFO + " (\n" +
+//                "  id string,\n" +
+//                "  user_id string,\n" +
+//                "  sku_id string,\n" +
+//                "  appraise string,\n" +
+//                "  appraise_name string,\n" +
+//                "  comment_txt string,\n" +
+//                "  ts_ms bigint,\n" +
+//                "  PRIMARY KEY (id) NOT ENFORCED" +
+//                ") " + SQLUtil.getUpsertKafkaDDL(Constant.TOPIC_DWD_INTERACTION_COMMENT_INFO));
+//        //写入
+//        joinedTable.executeInsert(Constant.TOPIC_DWD_INTERACTION_COMMENT_INFO);
     }
 }

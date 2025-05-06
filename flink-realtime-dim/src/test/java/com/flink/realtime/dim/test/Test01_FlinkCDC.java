@@ -29,7 +29,7 @@ public class Test01_FlinkCDC {
                 .hostname("cdh03")
                 .port(3306)
                 .databaseList("flink_realtime") // set captured database
-                .tableList("flink_realtime.payment_info") // set captured table
+                .tableList("flink_realtime.order_refund_info") // set captured table
                 .username("root")
                 .password("root")
                 .deserializer(new JsonDebeziumDeserializationSchema()) // converts SourceRecord to JSON String
@@ -48,7 +48,7 @@ public class Test01_FlinkCDC {
 
         DataStreamSource<String> mySQL_source = env.fromSource(mySqlSource, WatermarkStrategy.noWatermarks(), "MySQL Source");
 
-        mySQL_source.sinkTo(sink);
+        //mySQL_source.sinkTo(sink);
         mySQL_source.print();
 
         env.execute("Print MySQL Snapshot + Binlog");

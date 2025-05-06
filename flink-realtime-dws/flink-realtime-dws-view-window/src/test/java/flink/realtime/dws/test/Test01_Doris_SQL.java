@@ -1,4 +1,4 @@
-package flink;
+package flink.realtime.dws.test;
 
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;

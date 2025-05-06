@@ -1,4 +1,4 @@
-package flink;
+package flink.realtime.dws.test;
 
 import org.apache.doris.flink.cfg.DorisExecutionOptions;
 import org.apache.doris.flink.cfg.DorisOptions;

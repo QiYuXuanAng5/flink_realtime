@@ -2,7 +2,7 @@ package flink.realtime.db.app;
 
 import com.struggle.flink.realtime.common.base.BaseSQLApp;
 import com.struggle.flink.realtime.common.constant.Constant;
-import com.struggle.flink.realtime.common.util.SQLUtil;
+
 import org.apache.flink.table.api.Table;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 

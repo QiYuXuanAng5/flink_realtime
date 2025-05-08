@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="flink-realtime-dws-view-window" />
+        <module name="flink-realtime-trade-refund-pay-suc-detail" />
         <module name="flink-realtime-dws-traffic-view-window" />
         <module name="flink-realtime-user-login-window" />
         <module name="flink-realtime-common" />
@@ -26,6 +27,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="aaaa" target="1.8" />
+      <module name="flink-realtime-traffic-vc-ch-ar-is-new-page-view-window" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

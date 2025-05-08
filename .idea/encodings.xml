@@ -20,6 +20,8 @@
     <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-dwd-trade-order-detail/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-trade-order-pay-suc-detail/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-trade-order-pay-suc-detail/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-trade-refund-pay-suc-detail/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dwd/flink-realtime-trade-refund-pay-suc-detail/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/flink-realtime-dwd/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/flink-realtime-dwd/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-dws-trade-cart-add-uu-window/src/main/java" charset="UTF-8" />
@@ -30,6 +32,8 @@
     <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-dws-traffic-view-window/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-dws-view-window/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-dws-view-window/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-traffic-vc-ch-ar-is-new-page-view-window/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-traffic-vc-ch-ar-is-new-page-view-window/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-user-login-window/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/flink-realtime-dws/flink-realtime-user-login-window/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/flink-realtime-dws/realtime-dws-trade-sku-order-window/src/main/java" charset="UTF-8" />

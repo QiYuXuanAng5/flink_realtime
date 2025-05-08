@@ -27,6 +27,11 @@
       <option name="url" value="https://maven.aliyun.com/repository/public" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="apache-snapshots" />
+      <option name="name" value="apache-snapshots" />
+      <option name="url" value="https://repository.apache.org/snapshots" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="aliyun" />
       <option name="name" value="aliyun" />
       <option name="url" value="https://maven.aliyun.com/nexus/content/groups/public" />

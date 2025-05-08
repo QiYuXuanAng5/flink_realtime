@@ -3,6 +3,7 @@ package flink.realtime.db.app;
 import com.struggle.flink.realtime.common.base.BaseSQLApp;
 import com.struggle.flink.realtime.common.constant.Constant;
 
+import com.struggle.flink.realtime.common.util.SQLUtil;
 import org.apache.flink.table.api.Table;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 
@@ -30,6 +31,7 @@ public class DwdTradeRefundPaySucDetail extends BaseSQLApp {
         readOdsDb(tableEnv, Constant.TOPIC_DWD_TRADE_REFUND_PAYMENT_SUCCESS);
         // 2. 读取 字典表
         readBaseDic(tableEnv);
+        //tableEnv.executeSql("select * from base_dic").print();
 
         // 3. 过滤退款成功表数据
         Table refundPayment = tableEnv.sqlQuery(
@@ -50,7 +52,7 @@ public class DwdTradeRefundPaySucDetail extends BaseSQLApp {
                         "and `after`['refund_status']='1602'");
         tableEnv.createTemporaryView("refund_payment", refundPayment);
 
-        //tableEnv.executeSql("select * from refund_payment").print();
+        tableEnv.executeSql("select * from refund_payment").print();
 
         // 4. 过滤退单表中的退单成功的数据
         Table orderRefundInfo = tableEnv.sqlQuery(
@@ -65,7 +67,7 @@ public class DwdTradeRefundPaySucDetail extends BaseSQLApp {
                         "and `after`['refund_status']='0705'");
         tableEnv.createTemporaryView("order_refund_info", orderRefundInfo);
 
-        //tableEnv.executeSql("select * from order_refund_info").print();
+//        tableEnv.executeSql("select * from order_refund_info").print();
 
         // 5. 过滤订单表中的退款成功的数据
         Table orderInfo = tableEnv.sqlQuery(
@@ -80,41 +82,41 @@ public class DwdTradeRefundPaySucDetail extends BaseSQLApp {
                         "and `after`['order_status']='1006'");
         tableEnv.createTemporaryView("order_info", orderInfo);
 
-        //tableEnv.executeSql("select * from order_info").print();
+//        tableEnv.executeSql("select * from order_info").print();
 
-//        //6. 4 张表的 join
-//        Table result = tableEnv.sqlQuery(
-//                "select " +
-//                        "rp.id, " +
-//                        "oi.user_id, " +
-//                        "rp.order_id, " +
-//                        "rp.sku_id " +
-//                        "from refund_payment rp " +
-//                        "join order_refund_info ori " +
-//                        "   on rp.order_id = ori.order_id and rp.sku_id = ori.sku_id " +
-//                        "join order_info oi " +
-//                        "   on rp.order_id = oi.id " +
-//                        "join base_dic dic " +  // 普通 JOIN
-//                        "   on rp.payment_type = dic.dic_code"
-//        );
-//        result.execute().print();
+        //6. 4 张表的 join
+        Table result = tableEnv.sqlQuery(
+                "select " +
+                        "rp.id, " +
+                        "oi.user_id, " +
+                        "rp.order_id, " +
+                        "rp.sku_id " +
+                        "from refund_payment rp " +
+                        "join order_refund_info ori " +
+                        "   on rp.order_id = ori.order_id and rp.sku_id = ori.sku_id " +
+                        "join order_info oi " +
+                        "   on rp.order_id = oi.id " +
+                        "join base_dic dic " +  // 普通 JOIN
+                        "   on rp.payment_type = dic.dic_code"
+        );
+        result.execute().print();
 
 //        // 7.写出到 kafka
-//        tableEnv.executeSql("create table " + Constant.TOPIC_DWD_TRADE_REFUND_PAYMENT_SUCCESS + "(" +
-//                "id string," +
-//                "user_id string," +
-//                "order_id string," +
-//                "sku_id string," +
-//                "province_id string," +
-//                "payment_type_code string," +
-//                "payment_type_name string," +
-//                "date_id string," +
-//                "callback_time string," +
-//                "refund_num string," +
-//                "refund_amount string," +
-//                "ts bigint ," +
-//                "PRIMARY KEY (id) NOT ENFORCED " +
-//                ")" + SQLUtil.getUpsertKafkaDDL(Constant.TOPIC_DWD_TRADE_REFUND_PAYMENT_SUCCESS));
-//        result.executeInsert(Constant.TOPIC_DWD_TRADE_REFUND_PAYMENT_SUCCESS);
+        tableEnv.executeSql("create table " + Constant.TOPIC_DWD_TRADE_REFUND_PAYMENT_SUCCESS + "(" +
+                "id string," +
+                "user_id string," +
+                "order_id string," +
+                "sku_id string," +
+                "province_id string," +
+                "payment_type_code string," +
+                "payment_type_name string," +
+                "date_id string," +
+                "callback_time string," +
+                "refund_num string," +
+                "refund_amount string," +
+                "ts bigint ," +
+                "PRIMARY KEY (id) NOT ENFORCED " +
+                ")" + SQLUtil.getUpsertKafkaDDL(Constant.TOPIC_DWD_TRADE_REFUND_PAYMENT_SUCCESS));
+        result.executeInsert(Constant.TOPIC_DWD_TRADE_REFUND_PAYMENT_SUCCESS);
     }
 }

@@ -38,12 +38,13 @@ public class DwdTradeOrderDetail extends BaseSQLApp {
                 "`after`['source_id'] source_id,\n" +
                 "`after`['source_type'] source_type,\n" +
                 "`after`['sku_num'] sku_num,\n" +
-                "`after`['split_total_amount'] split_total_amount," +  // 分摊总金额
-                "`after`['split_activity_amount'] split_activity_amount," + // 分摊活动金额
-                "`after`['split_coupon_amount'] split_coupon_amount," + // 分摊的优惠券金额
+                "`after`['split_activity_amount'] split_activity_amount," +
+                "`after`['split_coupon_amount'] split_coupon_amount," +
+                "`after`['split_total_amount'] split_total_amount," +
                 "ts_ms " +
                 " from topic_db where source['table']='order_detail' and op='c'");
         tableEnv.createTemporaryView("order_detail", orderDetail);
+        //tableEnv.executeSql("select * from order_detail").print();
 
         //TODO 过滤出订单数据
         Table orderInfo = tableEnv.sqlQuery("select " +
@@ -96,7 +97,7 @@ public class DwdTradeOrderDetail extends BaseSQLApp {
                         "left join order_detail_coupon cou " +
                         "on od.id=cou.order_detail_id ");
 
-//        result.execute().print();
+        //result.execute().print();
 
         //将关联的结果写入到kafka
         tableEnv.executeSql(

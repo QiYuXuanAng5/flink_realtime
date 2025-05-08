@@ -10,6 +10,8 @@ import org.apache.flink.connector.kafka.sink.KafkaSink;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
+import java.util.Properties;
+
 /**
  * @Package com.flink.realtime.dim.test.Test01_FlinkCDC
  * @Author guo.jia.hui
@@ -18,6 +20,10 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
  */
 public class Test01_FlinkCDC {
     public static void main(String[] args) throws Exception {
+        Properties prop = new Properties();
+        prop.put("decimal.handling.mode", "string");
+        prop.put("connect.decimal.precision", "16");
+        prop.put("connect.decimal.scale", "2");
         //TODO 1.基本环境准备
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //TODO 2.设置并行度
@@ -29,12 +35,13 @@ public class Test01_FlinkCDC {
                 .hostname("cdh03")
                 .port(3306)
                 .databaseList("flink_realtime") // set captured database
-                .tableList("flink_realtime.order_refund_info") // set captured table
+                .tableList("flink_realtime.*") // set captured table
                 .username("root")
                 .password("root")
                 .deserializer(new JsonDebeziumDeserializationSchema()) // converts SourceRecord to JSON String
                 .startupOptions(StartupOptions.earliest())
                 .includeSchemaChanges(true)
+                .debeziumProperties(prop)
                 .build();
 
         KafkaSink<String> sink = KafkaSink.<String>builder()
@@ -48,7 +55,7 @@ public class Test01_FlinkCDC {
 
         DataStreamSource<String> mySQL_source = env.fromSource(mySqlSource, WatermarkStrategy.noWatermarks(), "MySQL Source");
 
-        //mySQL_source.sinkTo(sink);
+        mySQL_source.sinkTo(sink);
         mySQL_source.print();
 
         env.execute("Print MySQL Snapshot + Binlog");

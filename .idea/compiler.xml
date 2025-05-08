@@ -20,7 +20,6 @@
         <module name="flink-realtime-dim" />
         <module name="flink-realtime-trade-order-pay-suc-detail" />
         <module name="flink-realtime-publisher" />
-        <module name="realtime-dws-trade-sku-order-window" />
         <module name="flink-realtime-dwd-trade-order-cancel-detail" />
         <module name="flink-realtime-dwd-log" />
       </profile>
@@ -28,6 +27,7 @@
     <bytecodeTargetLevel>
       <module name="aaaa" target="1.8" />
       <module name="flink-realtime-traffic-vc-ch-ar-is-new-page-view-window" target="1.8" />
+      <module name="realtime-dws-trade-sku-order-window" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

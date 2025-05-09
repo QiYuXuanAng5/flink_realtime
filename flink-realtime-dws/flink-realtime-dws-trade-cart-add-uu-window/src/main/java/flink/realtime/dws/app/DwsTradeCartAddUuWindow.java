@@ -5,7 +5,9 @@ import com.alibaba.fastjson.JSONObject;
 import com.struggle.flink.realtime.common.base.BaseApp;
 import com.struggle.flink.realtime.common.base.CartAddUuBean;
 import com.struggle.flink.realtime.common.constant.Constant;
+import com.struggle.flink.realtime.common.function.BeanToJsonStrMapFunction;
 import com.struggle.flink.realtime.common.util.DateFormatUtil;
+import com.struggle.flink.realtime.common.util.FlinkSinkUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
@@ -25,6 +27,8 @@ import org.apache.flink.streaming.api.functions.windowing.AllWindowFunction;
 import org.apache.flink.streaming.api.windowing.assigners.TumblingEventTimeWindows;
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
 import org.apache.flink.util.Collector;
+
+import java.time.Duration;
 
 /**
  * @Package flink.realtime.dws.app.DwsTradeCartAddUuWindow
@@ -98,7 +102,7 @@ public class DwsTradeCartAddUuWindow extends BaseApp {
 
         //TODO 5.开窗
         AllWindowedStream<JSONObject, TimeWindow> windowDS
-                = cartUUDS.windowAll(TumblingEventTimeWindows.of(org.apache.flink.streaming.api.windowing.time.Time.seconds(10)));
+                = cartUUDS.windowAll(TumblingEventTimeWindows.of(org.apache.flink.streaming.api.windowing.time.Time.seconds(5)));
         //TODO 6.聚合
         SingleOutputStreamOperator<CartAddUuBean> aggregateDS = windowDS.aggregate(
                 new AggregateFunction<JSONObject, Long, Long>() {
@@ -141,5 +145,8 @@ public class DwsTradeCartAddUuWindow extends BaseApp {
         aggregateDS.print();
         //TODO 7.将聚合的结果写到Doris
         //aggregateDS.print();
+//        aggregateDS
+//                .map(new BeanToJsonStrMapFunction<>())
+//                .sinkTo(FlinkSinkUtil.getDorisSink("dws_trade_cart_add_uu_window"));
     }
 }

@@ -14,6 +14,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/flink-realtime-dwd/aaaa/pom.xml" />
+        <option value="$PROJECT_DIR$/flink-realtime-dws/flink-realtime-dws-trade-province-order-window/pom.xml" />
         <option value="$PROJECT_DIR$/flink-realtime-dws/flink-realtime-traffic-vc-ch-ar-is-new-page-view-window/pom.xml" />
       </set>
     </option>

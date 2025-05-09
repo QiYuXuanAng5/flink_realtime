@@ -56,7 +56,7 @@ public class DwsTrafficSourceKeywordPageViewWindow extends BaseSQLApp {
                 "  GROUP BY window_start, window_end,keyword");
         resTable.execute().print();
 
-//        //将聚合的结果写到Doris中
+        //将聚合的结果写到Doris中
 //        tableEnv.executeSql("create table dws_traffic_source_keyword_page_view_window(" +
 //                "  stt string, " +  // 2023-07-11 14:14:14
 //                "  edt string, " +

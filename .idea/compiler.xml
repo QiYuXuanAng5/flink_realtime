@@ -26,6 +26,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="aaaa" target="1.8" />
+      <module name="flink-realtime-dws-trade-province-order-window" target="1.8" />
       <module name="flink-realtime-traffic-vc-ch-ar-is-new-page-view-window" target="1.8" />
       <module name="realtime-dws-trade-sku-order-window" target="1.8" />
     </bytecodeTargetLevel>
